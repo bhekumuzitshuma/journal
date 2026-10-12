@@ -1,0 +1,2 @@
+# Install the project first with: python -m pip install -e ".[dev,ml,analysis,measurement]"
+# Regenerate this file with: python -m pip freeze > requirements.txt

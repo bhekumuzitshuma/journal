@@ -1,0 +1,21 @@
+project_name: messaging-channel-reliability
+seed: 0
+
+data:
+  image_root: data/raw
+  split_root: data/splits
+  channel_root: data/channels
+  result_root: results
+
+evaluation:
+  input_sizes: [224, 384]
+  confidence_threshold: 0.9
+  ece_bins: 15
+
+pilot:
+  image_count: 300
+  classes:
+    - healthy
+    - common_rust
+    - northern_leaf_blight
+    - gray_leaf_spot

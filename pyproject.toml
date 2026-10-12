@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "messaging-channel-reliability"
+version = "0.1.0"
+description = "Reproducible study of messaging-channel effects on image classifier reliability"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "pillow>=10.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+ml = [
+    "torch>=2.2",
+    "torchvision>=0.17",
+    "timm>=0.9",
+]
+analysis = [
+    "scikit-image>=0.22",
+    "scikit-learn>=1.4",
+    "scipy>=1.12",
+    "statsmodels>=0.14",
+]
+measurement = [
+    "imagehash>=4.3",
+    "piexif>=1.1",
+    "opencv-python>=4.9",
+]
+quality = [
+    "pyiqa>=0.1",
+]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[project.scripts]
+channel-study = "channel_study.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
